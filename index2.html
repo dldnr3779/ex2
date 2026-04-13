@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-4.0.0.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="#">PAGE1</a></li>
+        <li><a href="#">PAGE2</a></li>
+        <li><a href="#">PAGE3</a></li>
+        <li><a href="#">PAGE4</a></li>
+      </ul>
+    </header>
+    <div id="container">
+      <section class="page1"><h2>page1</h2></section>
+      <section class="page2"><h2>page2</h2></section>
+      <section class="page3"><h2>page3</h2></section>
+      <section class="page4"><h2>page4</h2></section>
+    </div>
+    <script>
+      $("header li").on("click", function () {
+        //   page1 = $(".page1").offset().top;
+        //   console.log(page1);
+        //   page2 = $(".page2").offset().top;
+        //   console.log(page2);
+        //   page3 = $(".page3").offset().top;
+        //   console.log(page3);
+        //   page4 = $(".page4").offset().top;
+        //   console.log(page4);
+        let i = $(this).index();
+        //   console.log(i);
+        let target = $("section").eq(i).offset().top;
+        //   console.log(target);
+        $("html, body").stop().animate({ scrollTop: target });
+      });
+    </script>
+  </body>
+</html>
